@@ -9,7 +9,7 @@ class App(Frame):
         self.entrada.place_configure(x=50, y=50)
 
         self.resultado = Label(text="Bem vindo.", font="Arial 30", border=True, borderwidth=2)
-        self.resultado.place_configure(x=700, y=50)
+        self.resultado.place_configure(x=800, y=50)
 
         # row 2
         self.b1 = Button(text="1", font="Arial 25", width=3, height=2, command=lambda: self.click("1"))
@@ -44,7 +44,7 @@ class App(Frame):
         self.b9.place_configure(x=250, y=350)
 
         self.resolver = Button(text="Resolver", font="Arial 20", width=8, height=2, command=lambda: self.solucionar())
-        self.resolver.place_configure(x=800, y=370)
+        self.resolver.place_configure(x=900, y=370)
 
 
     def click(self, n):
@@ -54,8 +54,8 @@ class App(Frame):
         exp = self.entrada.get()
         x = sympy.symbols("x")
         self.resultado.configure(text=(sympy.solve(exp, x)))
-                
+
 root = Tk()
-root.geometry("1000x500")
+root.geometry("1100x500")
 window = App(root)
 window.mainloop()
